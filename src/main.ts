@@ -1,6 +1,6 @@
 import 'bootstrap';
-import {Settings} from 'settings';
-import {ThemeManager} from 'shared/theme-manager';
+import {Settings} from './settings';
+import {ThemeManager} from './shared/theme-manager';
 
 export function configure(aurelia) {
   aurelia.use
@@ -9,10 +9,8 @@ export function configure(aurelia) {
     .plugin('aurelia-kendoui-bridge', (kendo) => kendo.detect().notifyBindingBehavior())
     .plugin('aurelia-after-attached-plugin');
 
-  aurelia.use.globalResources('shared/collapse-panel');
   aurelia.use.globalResources('shared/markdown');
   aurelia.use.globalResources('shared/logger');
-  aurelia.use.globalResources('shared/au-code');
 
   aurelia.start()
   .then(au => {

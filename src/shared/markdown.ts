@@ -1,5 +1,5 @@
 import {bindable, noView, inject, customElement} from 'aurelia-framework';
-import 'showdown';
+import * as showdown from 'showdown';
 import 'google/code-prettify/run_prettify';
 import 'showdown-prettify';
 import {Loader}  from 'aurelia-loader';
@@ -10,6 +10,9 @@ import {Loader}  from 'aurelia-loader';
 export class AuMarkdown {
 
   @bindable url;
+  element: Element;
+  loader: Loader;
+  converter: showdown.Converter;
 
   constructor(element, loader) {
     this.element = element;
