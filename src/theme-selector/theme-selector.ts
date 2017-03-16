@@ -4,6 +4,8 @@ import {Settings} from '../settings';
 
 @inject(ThemeManager, Settings)
 export class ThemeSelector {
+  themeManager: ThemeManager;
+  settings: Settings;
 
   themes = [
      { value: 'black', name: 'Black', colors: [ '#0167cc', '#4698e9', '#272727' ]  },

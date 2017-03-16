@@ -6,8 +6,9 @@ export class App {
   public configureRouter(config: RouterConfiguration, router: Router) {
     config.title = 'Carmel';
     config.map([
-      { route: ['', 'about'], name: 'about',      moduleId: 'about',      nav: true, title: 'About Carmel' },
-
+      { name: 'about',            route: 'about',             moduleId: 'about/about',                 title: 'About' },
+      { name: 'home',             route: '',                  redirect: 'about/about' },
+      { name: 'components',       route: 'components',        moduleId: 'components/index',            title: 'Components' },
     ]);
 
     this.router = router;
