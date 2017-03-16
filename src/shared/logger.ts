@@ -4,11 +4,11 @@ export class Logger {
   }
 
 
-  log(message, isError, container) {
+  log(message, isError, container?) {
     let lastContainer = kendo.jQuery('.console div:first', container);
     let counter = lastContainer.find('.count').detach();
     let lastMessage = lastContainer.text();
-    let count = 1 * (counter.text() || 1);
+    let count = 1 * (counter.text() || <any>1);
 
     lastContainer.append(counter);
 
@@ -26,7 +26,7 @@ export class Logger {
       count++;
 
       if (counter.length) {
-        counter.html(count);
+        counter.html('' + count);
       } else {
         lastContainer.html(lastMessage)
         .append('<span class=\'count\'>' + count + '</span>');
@@ -90,10 +90,10 @@ function getColor(elem, attr) {
   let color;
 
   do {
-    color = kendo.jQuery.css(elem, attr);
+    color = (<any>kendo.jQuery).css(elem, attr);
 
     // Keep going until we find an element that has color, or we hit the body
-    if (color && color !== 'transparent' || kendo.jQuery.nodeName(elem, 'body')) {
+    if (color && color !== 'transparent' || (<any>kendo.jQuery).nodeName(elem, 'body')) {
       break;
     }
 

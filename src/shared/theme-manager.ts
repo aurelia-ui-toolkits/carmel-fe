@@ -5,6 +5,8 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 @inject(EventAggregator)
 export class ThemeManager {
 
+  ea: EventAggregator;
+
   commons = [
       { name: 'standard', value: 'common' },
       { name: 'bootstrap', value: 'common-bootstrap', relativity: 'larger' },
