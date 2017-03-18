@@ -49,6 +49,7 @@ System.config({
     "font-awesome": "npm:font-awesome@4.6.3",
     "google/code-prettify": "github:google/code-prettify@master",
     "jquery": "npm:jquery@2.2.4",
+    "json": "github:systemjs/plugin-json@0.3.0",
     "showdown": "github:showdownjs/showdown@1.6.4",
     "showdown-prettify": "npm:showdown-prettify@1.3.0",
     "text": "github:systemjs/plugin-text@0.0.8",
@@ -328,7 +329,7 @@ System.config({
     "npm:graceful-readlink@1.0.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
-    "npm:hosted-git-info@2.2.0": {
+    "npm:hosted-git-info@2.3.1": {
       "url": "github:jspm/nodelibs-url@0.1.0"
     },
     "npm:https-browserify@0.0.0": {
@@ -357,7 +358,7 @@ System.config({
       "strip-bom": "npm:strip-bom@2.0.0"
     },
     "npm:normalize-package-data@2.3.6": {
-      "hosted-git-info": "npm:hosted-git-info@2.2.0",
+      "hosted-git-info": "npm:hosted-git-info@2.3.1",
       "is-builtin-module": "npm:is-builtin-module@1.0.0",
       "semver": "npm:semver@5.3.0",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2",
