@@ -1,6 +1,8 @@
 import samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
 
 export class Index {
+  router;
+
   configureRouter(config, router) {
     config.title = 'Samples';
 
@@ -14,7 +16,7 @@ export class Index {
         let sample = category.samples[key];
         sample = this.normalizeSample(category, key, sample);
 
-        routes.push({
+        routes.push(<any>{
           name: sample.route,
           route: sample.route,
           moduleId: './sample-runner',

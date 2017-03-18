@@ -1,12 +1,14 @@
 import {inject, bindable} from 'aurelia-framework';
 import {DOM} from 'aurelia-pal';
-//import samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
+import samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
 
 @inject(Element)
 export class Menu {
 
   @bindable router;
   element: Element;
+  samples;
+  options;
   toolbars = [];
 
   constructor(element) {
@@ -47,7 +49,7 @@ export class Menu {
     // deselect all but the button that has just been selected
     this.options.items.forEach(item => {
       if (item.id !== e.id) {
-        this.toggle('#' + item.id, false);
+        // this.toggle('#' + item.id, false);
       }
     });
   }
