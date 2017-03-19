@@ -1,4 +1,4 @@
-import samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
+import * as samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
 
 export class Index {
   private router;
@@ -8,7 +8,7 @@ export class Index {
 
     let routes = [{ name: 'default', route: '', redirect: 'generic' }];
 
-    samples.categories.forEach(category => {
+    (<any> samples).categories.forEach(category => {
       this.normalizeCategory(category);
 
       let keys = Object.keys(category.samples);
