@@ -11,5 +11,6 @@ declare module "*.json" {
 }
 declare module "*.json!" {
     const value: any;
-    export default value;
+    const categories: any;
+    export default categories;
 }
