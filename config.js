@@ -35,6 +35,7 @@ System.config({
     "aurelia-pal-browser": "npm:aurelia-pal-browser@1.1.0",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.2.0",
     "aurelia-router": "npm:aurelia-router@1.2.1",
+    "aurelia-templating": "npm:aurelia-templating@1.3.0",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.3.0",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.3.1",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.1.0",
@@ -266,7 +267,7 @@ System.config({
     },
     "npm:builtin-modules@1.1.1": {
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0"
     },
     "npm:clean-css@3.4.25": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -295,13 +296,13 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:constants-browserify@0.0.1": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0"
     },
     "npm:core-js@1.2.7": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0"
     },
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
@@ -346,7 +347,7 @@ System.config({
     },
     "npm:lcid@1.0.0": {
       "invert-kv": "npm:invert-kv@1.0.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0"
     },
     "npm:load-json-file@1.1.0": {
       "graceful-fs": "npm:graceful-fs@4.1.11",
@@ -361,7 +362,7 @@ System.config({
       "hosted-git-info": "npm:hosted-git-info@2.3.1",
       "is-builtin-module": "npm:is-builtin-module@1.0.0",
       "semver": "npm:semver@5.3.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0",
       "url": "github:jspm/nodelibs-url@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0",
       "validate-npm-package-license": "npm:validate-npm-package-license@3.0.1"
@@ -418,7 +419,7 @@ System.config({
       "core-util-is": "npm:core-util-is@1.0.2",
       "events": "github:jspm/nodelibs-events@0.1.1",
       "inherits": "npm:inherits@2.0.1",
-      "isarray": "npm:isarray@0.0.1",
+      "isarray": "npm:isarray@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
@@ -442,7 +443,7 @@ System.config({
     "npm:showdown@1.6.4": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0",
       "yargs": "npm:yargs@6.6.0"
     },
     "npm:source-map@0.4.4": {
@@ -458,7 +459,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:spdx-license-ids@1.2.2": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+      "systemjs-json": "github:systemjs/plugin-json@0.3.0"
     },
     "npm:stream-browserify@1.0.0": {
       "events": "github:jspm/nodelibs-events@0.1.1",

@@ -1,14 +1,14 @@
-import samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
+import * as samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
 
 export class Index {
-  router;
+  private router;
 
-  configureRouter(config, router) {
+  public configureRouter(config, router) {
     config.title = 'Samples';
 
     let routes = [{ name: 'default', route: '', redirect: 'generic' }];
 
-    samples.categories.forEach(category => {
+    (<any> samples).categories.forEach(category => {
       this.normalizeCategory(category);
 
       let keys = Object.keys(category.samples);
@@ -39,11 +39,11 @@ export class Index {
     this.router = router;
   }
 
-  normalizeCategory(category) {
+  private normalizeCategory(category) {
     category.dashed = category.title.toLowerCase().replace(/ /g, '-');
   }
 
-  normalizeSample(category, name, sample) {
+  private normalizeSample(category, name, sample) {
     if (typeof sample !== 'object') {
       sample = {
         gist: sample

@@ -1,26 +1,26 @@
 import {inject, bindable} from 'aurelia-framework';
 import {DOM} from 'aurelia-pal';
-import samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
+import * as samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
 
 @inject(Element)
 export class Menu {
 
-  @bindable router;
-  element: Element;
-  samples;
-  options;
-  toolbars = [];
+  @bindable public router;
+  public element: Element;
+  public samples;
+  public options;
+  public toolbars = [];
 
   constructor(element) {
     this.element = element;
     this.toolbars = [];
   }
 
-  attached() {
-    this.generateRow(samples.menu);
+  public attached() {
+    this.generateRow((<any> samples).menu);
   }
 
-  generateRow(data) {
+  public generateRow(data) {
     let div = DOM.createElement('div');
     let buttons = [];
 
@@ -45,7 +45,7 @@ export class Menu {
     });
   }
 
-  deselectOthers(e) {
+  public deselectOthers(e) {
     // deselect all but the button that has just been selected
     this.options.items.forEach(item => {
       if (item.id !== e.id) {
@@ -54,7 +54,7 @@ export class Menu {
     });
   }
 
-  buttonClicked(e) {
+  public buttonClicked(e) {
     let toolbar = e.sender;
     let options = toolbar.options;
     let clickedButton = options.items.find(i => i.id === e.id);
@@ -77,7 +77,7 @@ export class Menu {
     }
   }
 
-  getId(row, buttonIndex) {
+  public getId(row, buttonIndex) {
     return `row${row}index${buttonIndex}`;
   }
 }
