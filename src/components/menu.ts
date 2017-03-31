@@ -1,4 +1,5 @@
 import {inject, bindable} from 'aurelia-framework';
+import {getLogger, Logger} from 'aurelia-logging';
 import {DOM} from 'aurelia-pal';
 import * as samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
 
@@ -8,12 +9,14 @@ export class Menu {
   @bindable public router;
   public element: Element;
   public samples;
-  public options;
+  public options: kendo.ui.ToolBarOptions;
   public toolbars = [];
+  public log: Logger;
 
   constructor(element) {
     this.element = element;
     this.toolbars = [];
+    this.log = getLogger('menu');
   }
 
   public attached() {
@@ -49,7 +52,7 @@ export class Menu {
     // deselect all but the button that has just been selected
     this.options.items.forEach(item => {
       if (item.id !== e.id) {
-        // this.toggle('#' + item.id, false);
+        (<any> this).toggle('#' + item.id, false);
       }
     });
   }
