@@ -13,6 +13,7 @@ export class SampleRunner {
   private router: Router;
   private routes: any;
   private log: Logger;
+  private sample: any;
 
   constructor() {
     this.log = getLogger('sample-runner');
@@ -24,6 +25,7 @@ export class SampleRunner {
     let baseModuleId = routeConfig.baseModuleId;
     this.router = routeConfig.navModel.router;
     this.routes = this.router.routes.filter(r => r.category === this.category && r.baseModuleId === baseModuleId);
+    this.sample = routeConfig.navModel.config.sample;
   }
 
   public determineActivationStrategy() {

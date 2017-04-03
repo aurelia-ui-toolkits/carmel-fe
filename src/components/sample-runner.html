@@ -17,7 +17,7 @@
           </ul>
       </div>
       <div class="col-md-10" style="padding: 0">
-        <section>
+        <!--<section>
           <collapse-panel title.bind="sample.title">
             <div slot="buttons" class="buttons">
               <a href="https://gist.run/?id=${sample.gist}" show.bind="sample.gist" target="_blank" class="k-button">RUN</a>
@@ -37,7 +37,8 @@
               <div ak-tabstrip="k-animation.bind: false; k-widget.bind: tabstrip">
               </div>
           </collapse-panel>
-        </section>
+        </section>-->
+        <carmel-editor carmel-sample.bind="sample"></carmel-editor>
       </div>
     </div>
   </section>

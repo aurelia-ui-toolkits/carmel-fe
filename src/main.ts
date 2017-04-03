@@ -11,6 +11,7 @@ export function configure(aurelia) {
 
   aurelia.use.globalResources('shared/markdown');
   aurelia.use.globalResources('shared/logger');
+  aurelia.use.globalResources('components/carmel-editor/carmel-editor');
 
   aurelia.start()
   .then(au => {
