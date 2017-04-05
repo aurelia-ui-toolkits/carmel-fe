@@ -1,12 +1,12 @@
 <template>
-  <ak-toolbar>
+  <ak-toolbar k-widget.bind="toolbar">
     <ak-toolbar-item k-overflow="never">
       <ak-template>
         <img src='http://demos.telerik.com/kendo-ui/content/web/toolbar/user.png' class='user-image'/>
       </ak-template>
     </ak-toolbar-item>
     <ak-toolbar-item k-type="button" k-text="Send" k-overflow="never"></ak-toolbar-item>
-    <ak-toolbar-item k-type="button" k-text="Discard" k-overflow="never"></ak-toolbar-item>
+    <ak-toolbar-item k-type="button" k-text="Discard" k-overflow="never" k-enable.bind="isAdmin"></ak-toolbar-item>
     <ak-toolbar-item k-type="separator"></ak-toolbar-item>
     <ak-toolbar-item k-type="splitButton"
                     k-image-url="http://demos.telerik.com/kendo-ui/content/web/toolbar/save.png"
