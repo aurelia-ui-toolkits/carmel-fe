@@ -8,6 +8,7 @@ export class CarmelEditor {
   private log: Logger;
   private user: IUser;
   @observable() private selectedRole: string;
+  private tags: string[];
 
   constructor(private userService: UserService) {
     this.log = getLogger('carmel-editor');
@@ -17,6 +18,7 @@ export class CarmelEditor {
     } else {
       this.selectedRole = 'editor';
     }
+    this.tags = ['provided', 'initial', 'tags'];
   }
 
   public selectedRoleChanged(newValue: string) {
