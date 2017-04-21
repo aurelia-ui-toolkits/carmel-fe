@@ -98,6 +98,7 @@
       "json": "github:systemjs/plugin-json@^0.3.0",
       "showdown": "github:showdownjs/showdown@^1.6.4",
       "showdown-prettify": "npm:showdown-prettify@1.3.0",
+      "taggy": "github:Collokia/taggy@^1.0.4",
       "text": "github:systemjs/plugin-text@^0.0.8"
     },
     "devDependencies": {
@@ -105,6 +106,21 @@
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "clean-css": "npm:clean-css@^3.4.8",
       "core-js": "npm:core-js@^1.1.4"
+    },
+    "overrides": {
+      "github:Collokia/taggy@1.0.4": {
+        "dependencies": {
+          "bullseye": "npm:bullseye",
+          "contra": "npm:contra",
+          "crossvent": "npm:crossvent",
+          "fuzzysearch": "npm:fuzzysearch",
+          "hash-sum": "npm:hash-sum",
+          "horsey": "npm:horsey",
+          "lodash": "npm:lodash",
+          "sektor": "npm:sektor",
+          "sell": "npm:sell"
+        }
+      }
     }
   },
   "dependencies": {
