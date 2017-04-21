@@ -1,25 +1,10 @@
 <template>
   <require from="./carmel-editor.css"></require>
-  <require from="./carmel-toolbar"></require>
   <require from="./tag-editor"></require>
-  <carmel-toolbar></carmel-toolbar>
-  <h1>carmel-editor</h1>
-  <h2>showing ${carmelSample.title} sample for the ${carmelSample.control} control.</h2>
-  Change role:
-  <ak-drop-down-list k-value.two-way="selectedRole">
-    <select>
-      <option value="admin">admin</option>
-      <option value="editor">editor</option>
-    </select>
-  </ak-drop-down-list>
-  current user: ${user.name}
   <div>
     <input type="text" tag-editor="tags.bind: tags;">
   </div>
-  <div>
-    Tags:
-    <ul>
-      <li repeat.for="tag of tags">${tag}</li>
-    </ul>
+  <div class="screenshot-wrapper">
+    <img src.bind="'images/samples/' + carmelSample.gist + '.png'" />
   </div>
 </template>

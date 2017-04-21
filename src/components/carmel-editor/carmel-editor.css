@@ -3,6 +3,8 @@ carmel-editor {
   padding: 0 15px;
 }
 
-carmel-editor ak-toolbar {
-  padding: 0 15px;
+carmel-editor .screenshot-wrapper {
+  border: solid 1px #eee;
+  margin: 5px 0;
+  text-align: center;
 }
