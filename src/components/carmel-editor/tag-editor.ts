@@ -1,28 +1,59 @@
-import {autoinject, bindable, bindingMode, customAttribute/*, DOM*/} from 'aurelia-framework';
+import {autoinject, bindable, bindingMode, customAttribute, DOM, Loader} from 'aurelia-framework';
+import * as taggy from 'taggy';
 
 @autoinject()
 @customAttribute('tag-editor')
 export class TagEditor {
-  @bindable({ defaultBindingMode: bindingMode.twoWay }) private tags: string[] = [];
+  // how to check if styles are loaded without using SystemJS? ;-)
+  private static stylesAreLoaded = false;
 
-  constructor(private element: Element) {
-    this.handleChange = this.handleChange.bind(this);
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) private tags: string[] = [];
+  private taggyInstance: any;
+
+  constructor(private element: Element, private loader: Loader) {
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   public attached() {
-    kendo.jQuery(this.element).tagEditor({
-      initialTags: this.tags,
-      onChange: this.handleChange
+    const taggyOptions = {
+      autocomplete: {
+        noMatches: 'no matches',
+        suggestions: (data) => {
+          return Promise.resolve([ {list: ['provided', 'autocomplete', 'tags']} ]);
+        }
+      }
+    };
+
+    let promise: Promise<any>;
+    if (TagEditor.stylesAreLoaded) {
+      promise = Promise.resolve();
+    } else {
+      promise = this.loader.loadText('taggy/taggy.css').then((css) => {
+        DOM.injectStyles(css);
+      });
+    }
+    promise.then(() => {
+      this.taggyInstance = taggy(this.element, taggyOptions);
+      this.tags.forEach(tag => this.taggyInstance.addItem(tag));
+
+      this.taggyInstance.on('add', this.handleAdd);
+      this.taggyInstance.on('remove', this.handleRemove);
     });
   }
 
   public detached() {
-    kendo.jQuery(this.element).tagEditor('destroy');
+    this.taggyInstance.destroy();
   }
 
-  private handleChange(field: any[], editor: any[], tags: string[]) {
-    this.tags = tags;
-    // const event = DOM.createCustomEvent('change', { bubbles: true, details: { tags }});
-    // this.element.dispatchEvent(event);
+  private handleAdd(tag) {
+    this.tags.push(tag);
+  }
+
+  private handleRemove(tag) {
+    const index = this.tags.indexOf(tag);
+    if (index > -1) {
+      this.tags.splice(index, 1);
+    }
   }
 }
