@@ -9,3 +9,4 @@ coverage
 test/e2e/dist
 /typings
 /export
+test-dist
