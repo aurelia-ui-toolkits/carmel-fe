@@ -24,7 +24,9 @@ gulp.task('deploy-gh-pages', function() {
     "./jspm_packages/npm/showdown@1.6.4/**/*",
     './index.html',
     './favicon.ico',
-    './config.js'
+    './config.js',
+    './dist/aurelia.js',
+    './dist/app-build.js'
   ], { base: '.' })
      .pipe(gulp.dest('./test-dist')) // for debugging
     //.pipe(ghPages());
