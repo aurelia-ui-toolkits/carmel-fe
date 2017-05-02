@@ -6,7 +6,7 @@ var vinylPaths = require('vinyl-paths');
 
 gulp.task('deploy-gh-pages', function() {
   return gulp.src([
-    './src/**/*',
+    // './src/**/*',
     './kendo-sdk/**/*',
     './styles/*.*',
     './images/*.*',
@@ -19,7 +19,7 @@ gulp.task('deploy-gh-pages', function() {
     './jspm_packages/github/google/code-prettify*/**/*',
     './jspm_packages/npm/babel-runtime*/**/*',
     "./jspm_packages/npm/showdown-prettify@1.3.0.js",
-    "./jspm_packages/npm/showdown-prettify@1.3.0/**/*",,
+    "./jspm_packages/npm/showdown-prettify@1.3.0/**/*",
     "./jspm_packages/npm/showdown@1.6.4.js",
     "./jspm_packages/npm/showdown@1.6.4/**/*",
     './index.html',
@@ -28,17 +28,22 @@ gulp.task('deploy-gh-pages', function() {
     './dist/aurelia.js',
     './dist/app-build.js'
   ], { base: '.' })
-     .pipe(gulp.dest('./test-dist')) // for debugging
+     .pipe(gulp.dest('./test-dist')); // for debugging
     //.pipe(ghPages());
+});
+
+gulp.task('clean-test-dist', function() {
+  del('./test-dist');
 });
 
 gulp.task('deploy', function() {
   return runSequence(
-    'clean',
-    'unbundle',
+    'clean-test-dist',
+    // 'clean', // already called from 'build' which is called from 'bundle'
+    // 'unbundle', // already called from 'clean'
     'bundle',
     'deploy-gh-pages',
-    'unbundle',
+    // 'unbundle', // already called from 'clean'
     'clean'
   );
 });
