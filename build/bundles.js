@@ -30,7 +30,18 @@ module.exports = {
         "bootstrap",
         "bootstrap/css/bootstrap.css!text",
         "fetch",
-        "jquery"
+        "jquery",
+        "[aurelia-kendoui-bridge]",
+        "[aurelia-kendoui-bridge/**/*.js]",
+        "aurelia-kendoui-bridge/**/*.html!text",
+        "aurelia-after-attached-plugin",
+        "aurelia-after-attached-plugin/**/*",
+        "showdown",
+        "core-js/library/**/*",
+        "css",
+        "json",
+        "text",
+        "taggy"
       ],
       "options": {
         "inject": true,
