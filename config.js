@@ -580,66 +580,6 @@ System.config({
       "yargs-parser": "npm:yargs-parser@4.2.1"
     }
   },
-  depCache: {
-    "components/carmel-editor/carmel-editor.js": [
-      "aurelia-framework",
-      "aurelia-logging",
-      "../../services/user-service"
-    ],
-    "components/carmel-editor/carmel-toolbar.js": [
-      "aurelia-framework",
-      "aurelia-event-aggregator",
-      "aurelia-logging",
-      "../../services/user-service"
-    ],
-    "components/carmel-editor/tag-editor.js": [
-      "aurelia-framework",
-      "taggy"
-    ],
-    "components/index.js": [
-      "https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!"
-    ],
-    "components/menu.js": [
-      "aurelia-framework",
-      "aurelia-logging",
-      "aurelia-pal",
-      "https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!"
-    ],
-    "components/sample-runner.js": [
-      "aurelia-logging",
-      "aurelia-router"
-    ],
-    "main.js": [
-      "./settings",
-      "./shared/theme-manager",
-      "bootstrap"
-    ],
-    "nav-bar.js": [
-      "aurelia-framework",
-      "aurelia-event-aggregator"
-    ],
-    "services/user-service.js": [
-      "aurelia-framework",
-      "aurelia-event-aggregator"
-    ],
-    "shared/markdown.js": [
-      "aurelia-framework",
-      "showdown",
-      "aurelia-loader",
-      "google/code-prettify/run_prettify",
-      "showdown-prettify"
-    ],
-    "shared/theme-manager.js": [
-      "aurelia-framework",
-      "aurelia-pal",
-      "aurelia-event-aggregator"
-    ],
-    "theme-selector/theme-selector.js": [
-      "aurelia-framework",
-      "../shared/theme-manager",
-      "../settings"
-    ]
-  },
   bundles: {
     "app-build.js": [
       "about/about.html!github:systemjs/plugin-text@0.0.8.js",
@@ -1332,6 +1272,66 @@ System.config({
       "npm:jquery@2.2.4/dist/jquery.js",
       "npm:process@0.11.9.js",
       "npm:process@0.11.9/browser.js"
+    ]
+  },
+  depCache: {
+    "components/carmel-editor/carmel-editor.js": [
+      "aurelia-framework",
+      "aurelia-logging",
+      "../../services/user-service"
+    ],
+    "components/carmel-editor/carmel-toolbar.js": [
+      "aurelia-framework",
+      "aurelia-event-aggregator",
+      "aurelia-logging",
+      "../../services/user-service"
+    ],
+    "components/carmel-editor/tag-editor.js": [
+      "aurelia-framework",
+      "taggy"
+    ],
+    "components/index.js": [
+      "https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!"
+    ],
+    "components/menu.js": [
+      "aurelia-framework",
+      "aurelia-logging",
+      "aurelia-pal",
+      "https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!"
+    ],
+    "components/sample-runner.js": [
+      "aurelia-logging",
+      "aurelia-router"
+    ],
+    "main.js": [
+      "./settings",
+      "./shared/theme-manager",
+      "bootstrap"
+    ],
+    "nav-bar.js": [
+      "aurelia-framework",
+      "aurelia-event-aggregator"
+    ],
+    "services/user-service.js": [
+      "aurelia-framework",
+      "aurelia-event-aggregator"
+    ],
+    "shared/markdown.js": [
+      "aurelia-framework",
+      "showdown",
+      "aurelia-loader",
+      "google/code-prettify/run_prettify",
+      "showdown-prettify"
+    ],
+    "shared/theme-manager.js": [
+      "aurelia-framework",
+      "aurelia-pal",
+      "aurelia-event-aggregator"
+    ],
+    "theme-selector/theme-selector.js": [
+      "aurelia-framework",
+      "../shared/theme-manager",
+      "../settings"
     ]
   }
 });
