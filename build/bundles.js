@@ -41,7 +41,8 @@ module.exports = {
         "css",
         "json",
         "text",
-        "taggy"
+        "taggy",
+        "taggy/taggy.css!text"
       ],
       "options": {
         "inject": true,
