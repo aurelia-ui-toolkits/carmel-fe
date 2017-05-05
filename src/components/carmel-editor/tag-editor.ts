@@ -7,6 +7,7 @@ export class TagEditor {
   // how to check if styles are loaded without using SystemJS? ;-)
   private static stylesAreLoaded = false;
 
+  @bindable({ defaultBindingMode: bindingMode.oneTime }) private delimiter = ' ';
   @bindable({ defaultBindingMode: bindingMode.twoWay }) private tags: string[] = [];
   private taggyInstance: any;
 
@@ -22,7 +23,9 @@ export class TagEditor {
         suggestions: (data) => {
           return Promise.resolve([ {list: ['provided', 'autocomplete', 'tags']} ]);
         }
-      }
+      },
+      deletion: true,
+      delimiter: this.delimiter
     };
 
     let promise: Promise<any>;
