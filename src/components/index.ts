@@ -1,42 +1,48 @@
-import * as samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
+import {autoinject} from 'aurelia-framework';
+import {SampleService} from '../services/sample-service';
 
+@autoinject()
 export class Index {
   private router;
 
+  constructor(private sampleService: SampleService) { }
+
   public configureRouter(config, router) {
-    config.title = 'Samples';
+    return this.sampleService.getSamples().then(samples => {
+      config.title = 'Samples';
 
-    let routes = [{ name: 'default', route: '', redirect: 'generic' }];
+      let routes = [{ name: 'default', route: '', redirect: 'generic' }];
 
-    (<any> samples).categories.forEach(category => {
-      this.normalizeCategory(category);
+      (<any> samples).categories.forEach(category => {
+        this.normalizeCategory(category);
 
-      let keys = Object.keys(category.samples);
-      keys.forEach(key => {
-        let sample = category.samples[key];
-        sample = this.normalizeSample(category, key, sample);
+        let keys = Object.keys(category.samples);
+        keys.forEach(key => {
+          let sample = category.samples[key];
+          sample = this.normalizeSample(category, key, sample);
 
-        routes.push(<any>{
-          name: sample.route,
-          route: sample.route,
-          moduleId: './sample-runner',
-          title: sample.title,
-          sample: sample,
-          category: category
-        });
-
-        if (sample.default) {
-          routes.push({
-            name: category.dashed,
-            route: category.dashed,
-            redirect: sample.route
+          routes.push(<any> {
+            name: sample.route,
+            route: sample.route,
+            moduleId: './sample-runner',
+            title: sample.title,
+            sample: sample,
+            category: category
           });
-        }
-      });
-    });
 
-    config.map(routes);
-    this.router = router;
+          if (sample.default) {
+            routes.push({
+              name: category.dashed,
+              route: category.dashed,
+              redirect: sample.route
+            });
+          }
+        });
+      });
+
+      config.map(routes);
+      this.router = router;
+    });
   }
 
   private normalizeCategory(category) {

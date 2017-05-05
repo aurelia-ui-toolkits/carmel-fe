@@ -1,9 +1,9 @@
 import {inject, bindable} from 'aurelia-framework';
 import {getLogger, Logger} from 'aurelia-logging';
 import {DOM} from 'aurelia-pal';
-import * as samples from 'https://aurelia-ui-toolkits.github.io/aurelia-kendoui-samples/samples.json!';
+import {SampleService} from '../services/sample-service';
 
-@inject(Element)
+@inject(Element, SampleService)
 export class Menu {
 
   @bindable public router;
@@ -12,15 +12,19 @@ export class Menu {
   public options: kendo.ui.ToolBarOptions;
   public toolbars = [];
   public log: Logger;
+  public sampleService: SampleService;
 
-  constructor(element) {
+  constructor(element, sampleService) {
     this.element = element;
+    this.sampleService = sampleService;
     this.toolbars = [];
     this.log = getLogger('menu');
   }
 
   public attached() {
-    this.generateRow((<any> samples).menu);
+    return this.sampleService.getSamples().then(samples => {
+      this.generateRow((<any> samples).menu);
+    });
   }
 
   public generateRow(data) {
