@@ -5,6 +5,7 @@ import {IUser, UserService} from '../../services/user-service';
 @autoinject()
 export class CarmelEditor {
   @bindable() public carmelSample: any;
+  public debugMode: false;
   private log: Logger;
   private user: IUser;
   @observable() private selectedRole: string;

@@ -4,6 +4,14 @@
   <div>
     <input type="text" tag-editor="delimiter.bind: ';'; tags.bind: tags;">
   </div>
+  <div>
+    <label><input checked.bind="debugMode" type="checkbox" /> debug mode</label>
+  </div>
+  <div show.bind="debugMode">
+    <div repeat.for="tag of tags">
+      ${tag}
+    </div>
+  </div>
   <div class="screenshot-wrapper">
     <img src.bind="'images/samples/' + carmelSample.gist + '.png'" />
   </div>
