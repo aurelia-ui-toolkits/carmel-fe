@@ -26,4 +26,12 @@ export class SampleService {
         return this.cache;
       });
   }
+
+  public getTagCompletions() {
+    return new Promise(resolve => {
+      window.setTimeout(() => {
+        resolve([ {list: ['provided', 'autocomplete', 'tags']} ]);
+      }, 200);
+    });
+  }
 }

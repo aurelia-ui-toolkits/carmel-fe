@@ -1,4 +1,5 @@
 import {autoinject, bindable, bindingMode, customAttribute, DOM, Loader} from 'aurelia-framework';
+import {SampleService} from '../../services/sample-service';
 import * as taggy from 'taggy';
 
 @autoinject()
@@ -11,7 +12,7 @@ export class TagEditor {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) private tags: string[] = [];
   private taggyInstance: any;
 
-  constructor(private element: Element, private loader: Loader) {
+  constructor(private element: Element, private loader: Loader, private sampleService: SampleService) {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
@@ -21,7 +22,8 @@ export class TagEditor {
       autocomplete: {
         noMatches: 'no matches',
         suggestions: (data) => {
-          return Promise.resolve([ {list: ['provided', 'autocomplete', 'tags']} ]);
+          // return Promise.resolve([ {list: ['provided', 'autocomplete', 'tags']} ]);
+          return this.sampleService.getTagCompletions();
         }
       },
       deletion: true,
