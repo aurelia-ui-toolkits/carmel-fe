@@ -1,6 +1,6 @@
 import {inject} from 'aurelia-framework';
-import {ThemeManager} from '../shared/theme-manager';
-import {Settings} from '../settings';
+import {ThemeManager} from './theme-manager';
+import {Settings} from '../../../settings';
 
 @inject(ThemeManager, Settings)
 export class ThemeSelector {
